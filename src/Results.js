@@ -2,7 +2,7 @@ import Pet from "./Pet";
 
 const Results = (props) => {
   return (
-    <div className="results">
+    <div className="search">
       {!props.pets.length ? (
         <h2>No Pets Found</h2>
       ) : (
@@ -14,6 +14,7 @@ const Results = (props) => {
             images={pet.images}
             location={`${pet.city}, ${pet.state}`}
             key={pet.id}
+            id={pet.id}
           />
         ))
       )}
