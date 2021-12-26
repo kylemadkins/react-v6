@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Pet = (props) => {
   let hero = "http://pets-images.dev-apis.com/pets/none.jpg";
   if (props.images.length) {
@@ -5,7 +7,7 @@ const Pet = (props) => {
   }
 
   return (
-    <a href={`/details/${props.id}`} className="pet">
+    <Link to={`/details/${props.id}`} className="pet">
       <div className="image-container">
         <img src={hero} alt={props.name} />
       </div>
@@ -15,7 +17,7 @@ const Pet = (props) => {
           {props.animal} - {props.breed} - {props.location}
         </h2>
       </div>
-    </a>
+    </Link>
   );
 };
 
