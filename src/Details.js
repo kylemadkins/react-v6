@@ -23,15 +23,19 @@ class Details extends Component {
   }
 
   render() {
-    const { name, animal, breed, city, state, description } = this.state;
-    return (
-      <div className="details">
-        <h1>{name}</h1>
-        <h2>{`${animal} - ${breed} - ${city}, ${state}`}</h2>
-        <p>{description}</p>
-        <button>Adopt {name}</button>
-      </div>
-    );
+    if (this.state.loading) {
+      return <h2>Loading...</h2>;
+    } else {
+      const { name, animal, breed, city, state, description } = this.state;
+      return (
+        <div className="details">
+          <h1>{name}</h1>
+          <h2>{`${animal} - ${breed} - ${city}, ${state}`}</h2>
+          <p>{description}</p>
+          <button>Adopt {name}</button>
+        </div>
+      );
+    }
   }
 }
 
